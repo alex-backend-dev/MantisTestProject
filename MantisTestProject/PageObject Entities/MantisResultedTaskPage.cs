@@ -22,7 +22,5 @@ namespace MantisTestProject.PageObject_Entities
         {
             return IsDisplayed(driver, BugReporter, 4);
         }
-
-
     }
 }

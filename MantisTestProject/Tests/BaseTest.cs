@@ -1,4 +1,5 @@
 ﻿using MantisTestProject.Enum_Entity;
+using MantisTestProject.Helper;
 using MantisTestProject.PageObject_Entities;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -16,9 +17,9 @@ namespace MantisTestProject.Tests
         protected MantisResultedTaskPage? mantisResultedTaskPage;
 
         [OneTimeSetUp]
-        protected void SetupDriver()
+        protected void Setup()
         {
-            driver = BasePage.CreateDriver(TypeOfDriver.Chrome);
+            driver = DriverHelper.CreateDriver(TypeOfDriver.Chrome);
             basePage = new BasePage(driver);
             mantisHomePage = new MantisHomePage(driver);
             mantisLogInPage = new MantisLogInPage(driver);

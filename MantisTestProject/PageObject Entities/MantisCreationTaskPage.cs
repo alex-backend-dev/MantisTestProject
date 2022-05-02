@@ -47,7 +47,6 @@ namespace MantisTestProject.PageObject_Entities
         private IWebElement GetReportStayRadioButton => driver.FindElement(ReportStayRadioButton);
         private IWebElement GetCreateTaskButton => driver.FindElement(CreateTaskButton);
         private IWebElement GetNavigationBar => driver.FindElement(NavigationBar);
-
         private IList<IWebElement> GetListOfTasks => driver.FindElements(ListOfTasks);
 
 
@@ -123,8 +122,7 @@ namespace MantisTestProject.PageObject_Entities
 
         private MantisCreationTaskPage ClickReportStayRadioButton()
         {
-            Actions actions = new Actions(driver);
-            actions.MoveToElement(GetReportStayRadioButton).Click().Perform();
+            ClickViaAction(GetReportStayRadioButton);
             return this;
         }
 

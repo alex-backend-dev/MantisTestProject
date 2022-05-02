@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace MantisTestProject.PageObject_Entities
 {
@@ -27,8 +26,7 @@ namespace MantisTestProject.PageObject_Entities
         {
             if (!GetRememberCredentialsCheckBox.Selected)
             {
-                Actions actions = new Actions(driver);
-                actions.MoveToElement(GetRememberCredentialsCheckBox).Click().Perform();
+                ClickViaAction(GetRememberCredentialsCheckBox);
             }
 
             else

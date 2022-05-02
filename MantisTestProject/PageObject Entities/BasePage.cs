@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -29,29 +30,6 @@ namespace MantisTestProject.PageObject_Entities
         public bool AtPageByTitle(string Title)
         {
             return driver?.Title == Title;
-        }
-
-        public static IWebDriver CreateDriver(TypeOfDriver typeOfDriver)
-        {
-            switch (typeOfDriver)
-            {
-                case TypeOfDriver.Chrome:
-                    new DriverManager().SetUpDriver(new ChromeConfig());
-                    ChromeOptions options = new ChromeOptions();
-                    options.AddArguments("--lang=ru");
-                    return new ChromeDriver(options);
-
-                case TypeOfDriver.Edge:
-                    new DriverManager().SetUpDriver(new EdgeConfig());
-                    return new EdgeDriver();
-
-                case TypeOfDriver.Firefox:
-                    new DriverManager().SetUpDriver(new FirefoxConfig());
-                    return new FirefoxDriver();
-
-                default:
-                    throw new Exception("Incorrect Browser Name");
-            }
         }
 
         public bool IsDisplayed(IWebDriver driver, By by, int timeoutInSeconds)
@@ -93,17 +71,10 @@ namespace MantisTestProject.PageObject_Entities
             return selectList;
         }
 
-        public bool isSuccessfullAlertPresent()
+        public void ClickViaAction(IWebElement webElement)
         {
-            try
-            {
-                driver?.SwitchTo().Alert();
-                return true;
-            }   
-            catch (NoAlertPresentException)
-            {
-                return false;
-            } 
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(webElement).Click().Perform();
         }
     }
 }
