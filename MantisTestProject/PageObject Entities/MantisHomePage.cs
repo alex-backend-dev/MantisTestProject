@@ -20,10 +20,10 @@ namespace MantisTestProject.PageObject_Entities
             return new MantisLogInPage(driver);
         }
 
-        public MantisTaskPage ClickCreateTaskButton()
+        public MantisCreationTaskPage ClickCreateTaskButton()
         {
             GetCreateTaskButton.Click();
-            return new MantisTaskPage(driver);
+            return new MantisCreationTaskPage(driver);
         }
     }
 }

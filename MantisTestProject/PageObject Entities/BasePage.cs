@@ -92,5 +92,18 @@ namespace MantisTestProject.PageObject_Entities
             selectList.SelectByIndex(select);
             return selectList;
         }
+
+        public bool isSuccessfullAlertPresent()
+        {
+            try
+            {
+                driver?.SwitchTo().Alert();
+                return true;
+            }   
+            catch (NoAlertPresentException)
+            {
+                return false;
+            } 
+        }
     }
 }

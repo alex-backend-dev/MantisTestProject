@@ -4,7 +4,7 @@
     {
         public static class Credential
         {
-            public const string UserName = "Rurtis";
+            public const string UserName = "Rurtis ";
             public const string Password = "110411";
         }
 
@@ -15,7 +15,7 @@
             public const string OperationSystemVersion = "11";
             public const string SummaryTaskInfo = "Refund functionality doesn't work";
             public const string DescriptionInfo = "Once we make a purchase and then trying to make a refund, refund doesn't work at all";
-            public const string StepsToReproduceInfo = "1)Make a purchase 2)Make a refund 3)Verify you are not able to make a refund";
+            public const string StepsToReproduceInfo = "1 )Make a purchase 2) Make a refund  3) Verify you are not able to make a refund";
             public const string AdditionalInfo = "Make sure you make all steps for reproduction on Windows 11";
         }
 

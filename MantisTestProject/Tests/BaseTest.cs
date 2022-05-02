@@ -12,7 +12,8 @@ namespace MantisTestProject.Tests
         protected BasePage? basePage;
         protected MantisHomePage? mantisHomePage;
         protected MantisLogInPage? mantisLogInPage;
-        protected MantisTaskPage? mantisTaskPage;
+        protected MantisCreationTaskPage? mantisCreationTaskPage;
+        protected MantisResultedTaskPage? mantisResultedTaskPage;
 
         [OneTimeSetUp]
         protected void SetupDriver()
@@ -21,7 +22,8 @@ namespace MantisTestProject.Tests
             basePage = new BasePage(driver);
             mantisHomePage = new MantisHomePage(driver);
             mantisLogInPage = new MantisLogInPage(driver);
-            mantisTaskPage = new MantisTaskPage(driver);
+            mantisCreationTaskPage = new MantisCreationTaskPage(driver);
+            mantisResultedTaskPage = new MantisResultedTaskPage(driver);
 
 
             driver.Manage().Window.Maximize();
