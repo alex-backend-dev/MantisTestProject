@@ -1,4 +1,5 @@
-﻿using MantisTestProject.Enum_Entity;
+﻿using Allure.Commons;
+using MantisTestProject.Enum_Entity;
 using MantisTestProject.Helper;
 using MantisTestProject.PageObject_Entities;
 using NUnit.Framework;
@@ -15,6 +16,12 @@ namespace MantisTestProject.Tests
         protected MantisLogInPage? mantisLogInPage;
         protected MantisCreationTaskPage? mantisCreationTaskPage;
         protected MantisResultedTaskPage? mantisResultedTaskPage;
+
+        [OneTimeSetUp]
+        public void ClearResultsDir()
+        {
+            AllureLifecycle.Instance.CleanupResultDirectory();
+        }
 
         [OneTimeSetUp]
         protected void Setup()

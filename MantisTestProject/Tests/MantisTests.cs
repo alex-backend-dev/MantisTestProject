@@ -1,13 +1,26 @@
+using Allure.Commons;
 using MantisTestProject.Constant_Entities;
 using MantisTestProject.Tests;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace MantisTestProject
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureDisplayIgnored]
     public class MantisTests : BaseTest
     {
-        [Test, Order(1)]       
+        [Test, Order(1)]
+        [AllureTag("Smoke")]
+        [AllureDescription("Authorization for Mantis bug tracking system")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-1")]
+        [AllureTms("TMS-12")]
+        [AllureOwner("User")]
+        [AllureSuite("PassedSuite")]
+        [AllureSubSuite("Assert")]
         public void AuthorizationTest()
         {
             basePage?.GoTo(MantisConstants.Url.MantisHomePageUrl);
@@ -24,6 +37,14 @@ namespace MantisTestProject
         }
 
         [Test, Order(2)]
+        [AllureTag("Smoke")]
+        [AllureDescription("Task test creation")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-2")]
+        [AllureTms("TMS-13")]
+        [AllureOwner("User")]
+        [AllureSuite("PassedSuite")]
+        [AllureSubSuite("Assert")]
         public void CreateTaskTest()
         {
             mantisHomePage?.ClickCreateTaskButton();
