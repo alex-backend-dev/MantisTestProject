@@ -17,20 +17,11 @@ namespace MantisTestProject.PageObject_Entities
         protected readonly IWebDriver? driver;
         public BasePage(IWebDriver driver) => this.driver = driver;
 
-        public void GoTo(string URL)
-        {
-            driver?.Navigate().GoToUrl(URL);
-        }
+        public void GoTo(string URL) => driver?.Navigate().GoToUrl(URL);
 
-        public bool AtPageByURL(string URL)
-        {
-            return driver?.Url == URL;
-        }
+        public bool AtPageByURL(string URL) => driver?.Url == URL;
 
-        public bool AtPageByTitle(string Title)
-        {
-            return driver?.Title == Title;
-        }
+        public bool AtPageByTitle(string Title) => driver?.Title == Title;
 
         public bool IsDisplayed(IWebDriver driver, By by, int timeoutInSeconds)
         {

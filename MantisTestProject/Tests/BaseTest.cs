@@ -18,24 +18,20 @@ namespace MantisTestProject.Tests
         protected MantisResultedTaskPage? mantisResultedTaskPage;
 
         [OneTimeSetUp]
-        public void ClearResultsDir()
-        {
-            AllureLifecycle.Instance.CleanupResultDirectory();
-        }
+        public void ClearResultsDir() => AllureLifecycle.Instance.CleanupResultDirectory();
 
         [OneTimeSetUp]
         protected void Setup()
         {
             driver = DriverHelper.CreateDriver(TypeOfDriver.Chrome);
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
+
             basePage = new BasePage(driver);
             mantisHomePage = new MantisHomePage(driver);
             mantisLogInPage = new MantisLogInPage(driver);
             mantisCreationTaskPage = new MantisCreationTaskPage(driver);
             mantisResultedTaskPage = new MantisResultedTaskPage(driver);
-
-
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
         }
 
         [OneTimeTearDown]

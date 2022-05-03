@@ -52,10 +52,7 @@ namespace MantisTestProject.PageObject_Entities
             return this;
         }
 
-        public bool IsAuthorsNameDisplayed()
-        {
-            return IsDisplayed(driver, AuthorsName, 5);
-        }
+        public bool IsAuthorsNameDisplayed() => IsDisplayed(driver, AuthorsName, 5);
 
         public MantisHomePage Authorization(string userName, string password)
         {

@@ -13,14 +13,8 @@ namespace MantisTestProject.PageObject_Entities
         {
         }
 
-        public bool IsBugIdDisplayed()
-        {
-            return IsDisplayed(driver, BugId, 4);
-        }
+        public bool IsBugIdDisplayed() => IsDisplayed(driver, BugId, 4);
 
-        public bool IsBugReporterIsDisplayed()
-        {
-            return IsDisplayed(driver, BugReporter, 4);
-        }
+        public bool IsBugReporterIsDisplayed() => IsDisplayed(driver, BugReporter, 4);
     }
 }

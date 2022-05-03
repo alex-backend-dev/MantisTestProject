@@ -132,10 +132,7 @@ namespace MantisTestProject.PageObject_Entities
             return this;
         }
 
-        public bool IsReportBugFormDisplayed()
-        {
-            return IsDisplayed(driver, ReportBugForm, 4);
-        }
+        public bool IsReportBugFormDisplayed() => IsDisplayed(driver, ReportBugForm, 4);
 
         public MantisHomePage ClickMantisBtLogo()
         {
